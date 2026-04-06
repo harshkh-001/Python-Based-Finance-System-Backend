@@ -1,0 +1,86 @@
+{% extends 'Users/base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+
+{% csrf_token %}
+<div class="text-center mb-5">
+    <h2>Welcome to Transection Services</h2>
+    <p class="text-muted">Manage, Analyze, and Track your transaction</p>
+</div>
+
+<div class="row justify-content-center gap-4">
+
+    <div class="col-md-4">
+        <div class="card shadow-sm p-4 text-center">
+            <h4>View Transaction records</h4>
+            <p class="text-muted">View all Transactions</p>
+                <button class="btn btn-success mt-3" onclick="window.location.href='/api/get-transactions'">
+                    View Transactions
+                </button>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card shadow-sm p-4 text-center">
+            <h4>Analysis and Summary</h4>
+            <p class="text-muted">View financial insights and reports</p>
+            
+            <button class="btn btn-success mt-3" onclick="window.location.href='/transaction-analysis'">
+                View Analysis/Summary
+            </button>
+        </div>
+    </div>
+
+   {% if role == 'analyst' or role == 'admin'%}
+    <div class="col-md-4">
+        <div class="card shadow-sm p-4 text-center">
+            <h4>Filter Search</h4>
+            <p class="text-muted">To filter transactions on date,category and type </p>
+            
+            <button class="btn btn-success mt-3" onclick="window.location.href='/filter-transaction'">
+                Filter Search
+            </button>
+        </div>
+    </div>
+    {% endif %}
+    
+    {% if role == 'admin'%}
+        <div class="col-md-4">
+            <div class="card shadow-sm p-4 text-center">
+                <h4>Create Transaction</h4>
+                <p class="text-muted">To create new Transaction</p>
+                
+                <button class="btn btn-success mt-3" onclick="window.location.href='/create-transaction'">
+                    Create Transaction
+                </button>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm p-4 text-center">
+                <h4>Update Transaction</h4>
+                <p class="text-muted">To Update Transaction</p>
+                
+                <button class="btn btn-success mt-3" onclick="window.location.href='/update-transaction'">
+                    Update Transaction
+                </button>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm p-4 text-center">
+                <h4>Delete Transaction</h4>
+                <p class="text-muted">To Delete Transaction</p>
+                
+                <button class="btn btn-success mt-3" onclick="window.location.href='/delete-transaction'">
+                    Delete Transaction
+                </button>
+            </div>
+        </div>
+    {% endif %}
+    
+
+</div>
+{% endblock %}

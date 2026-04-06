@@ -1,0 +1,61 @@
+{% extends 'Users/base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+
+{% csrf_token %}
+<div class="text-center mb-5">
+    <h2>Welcome to Your Financial Dashboard</h2>
+    <p class="text-muted">Manage, Analyze, and Track your finances</p>
+</div>
+
+<div class="row justify-content-center gap-4">
+
+    <div class="col-md-4">
+        <div class="card shadow-sm p-4 text-center">
+            <h4>Transaction Services</h4>
+            <p class="text-muted">Fetch and manage transaction data</p>
+                <button class="btn btn-primary mt-3" onclick="window.location.href='/transaction-services'">
+                    Transaction Services
+                </button>
+        </div>
+    </div>
+    {% if role == 'admin'%}
+
+    <div class="col-md-4">
+        <div class="card shadow-sm p-4 text-center">
+            <h4>Analysis and Summary</h4>
+            <p class="text-muted">View User analysis and reports</p>
+                <button class="btn btn-primary mt-3" onclick="window.location.href='/user-analysis'">
+                    View Analysis/Summary
+                </button>
+        </div>
+    </div>
+    
+        <div class="col-md-4">
+            <div class="card shadow-sm p-4 text-center">
+                <h4>Create User</h4>
+                <p class="text-muted">To create new users and assign them role</p>
+                
+                <button class="btn btn-primary mt-3" onclick="window.location.href='/create-user'">
+                    Create User
+                </button>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm p-4 text-center">
+                <h4>User List</h4>
+                <p class="text-muted">To view,Edit and delete users </p>
+                
+                <button class="btn btn-primary mt-3" onclick="window.location.href='/user-list'">
+                    User List
+                </button>
+            </div>
+        </div>
+    {% endif %}
+    
+
+</div>
+{% endblock %}

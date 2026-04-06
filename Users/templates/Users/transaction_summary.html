@@ -1,0 +1,60 @@
+{% extends 'Users/base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+
+{% csrf_token %}
+<div class="text-center mb-5">
+    <h2>Welcome to Transection Services</h2>
+    <p class="text-muted">Manage, Analyze, and Track your transaction</p>
+</div>
+
+<div class="row justify-content-center gap-4">
+
+    <div class="col-md-4">
+        <div class="card shadow-sm p-4 text-center">
+            <h4>Summary</h4>
+            <p class="text-muted">View summary of Transactions</p>
+                <button class="btn btn-success mt-3" onclick="window.location.href='/api/summary'">
+                    View Summay
+                </button>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card shadow-sm p-4 text-center">
+            <h4>Category wise Summary</h4>
+            <p class="text-muted">View summary of transaction category wise</p>
+            
+            <button class="btn btn-success mt-3" onclick="window.location.href='/api/category-breakdown'">
+                View Category wise Summay
+            </button>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card shadow-sm p-4 text-center">
+            <h4>Monthly Summary</h4>
+            <p class="text-muted">To view Monthly Summaries of Transactions</p>
+            
+            <button class="btn btn-success mt-3" onclick="window.location.href='/api/monthly-summary'">
+                View monthly summary
+            </button>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card shadow-sm p-4 text-center">
+            <h4>Recent Activity</h4>
+            <p class="text-muted">To View the recent Transaction</p>
+            
+            <button class="btn btn-success mt-3" onclick="window.location.href='/api/recent-transactions'">
+                View Recent Activity
+            </button>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

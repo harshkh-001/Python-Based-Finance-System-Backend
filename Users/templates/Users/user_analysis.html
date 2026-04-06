@@ -1,0 +1,59 @@
+{% extends 'Users/base.html' %}
+
+{% block title %}User Analysis Page{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <h2 class="text-center mb-4 fw-bold text-dark">
+        User Analytics Dashboard
+    </h2>
+
+    <div class="row g-4">
+
+        <!-- Total Users -->
+        <div class="col-md-3">
+            <div class="card shadow-sm border-0 text-center p-3">
+                <div class="card-body">
+                    <h6 class="text-muted">Total Users</h6>
+                    <h2 class="fw-bold text-dark">{{ total }}</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Admin -->
+        <div class="col-md-3">
+            <div class="card shadow-sm border-0 text-center p-3">
+                <div class="card-body">
+                    <h6 class="text-muted">Admins</h6>
+                    <h2 class="fw-bold text-primary">{{ admin }}</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Analyst -->
+        <div class="col-md-3">
+            <div class="card shadow-sm border-0 text-center p-3">
+                <div class="card-body">
+                    <h6 class="text-muted">Analysts</h6>
+                    <h2 class="fw-bold text-success">{{ analyst }}</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Viewer -->
+        <div class="col-md-3">
+            <div class="card shadow-sm border-0 text-center p-3">
+                <div class="card-body">
+                    <h6 class="text-muted">Viewers</h6>
+                    <h2 class="fw-bold text-warning">{{ viewer }}</h2>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
