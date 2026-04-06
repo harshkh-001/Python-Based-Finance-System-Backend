@@ -137,15 +137,21 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-🔐 Authentication Flow
+## API Documentation
+
+Swagger UI: http://127.0.0.1:8000/swagger/  
+Redoc: http://127.0.0.1:8000/redoc/
+
+
+## 🔐 Authentication Flow
 Users login via /login
 
 Sessions are maintained using Django authentication
 
 Role is used for authorization across APIs and views
 
-⚠️ Validation & Error Handling
-The system includes:
+## ⚠️ Validation & Error Handling
+### The system includes:
 
 Input validation for forms and APIs
 
@@ -165,13 +171,13 @@ Safe database queries
 
 Graceful failure handling
 
-🧠 Design Decisions
+## 🧠 Design Decisions
 Decision	Reason
 Separation of Concerns	Accounts → Authentication, Api → Business logic, Users → UI
 Role-Based Control	Simplified but effective RBAC system
 Django ORM	Clean and efficient database operations
 Modular Structure	Easy to scale and maintain
-📊 Assumptions
+### 📊 Assumptions
 Users are pre-assigned roles (admin, analyst, viewer)
 
 Authentication is session-based (not JWT)
@@ -180,7 +186,7 @@ SQLite is sufficient for this scope
 
 created_at is used for date-based operations
 
-🧪 Testing the System
+### 🧪 Testing the System
 You can test:
 
 APIs using Postman / browser
@@ -189,7 +195,7 @@ UI via Django templates
 
 Role restrictions by logging in with different users
 
-📌 Evaluation Mapping
+## 📌 Evaluation Mapping
 Criteria	Implementation
 Python Proficiency	Clean Django + DRF usage
 Application Design	Modular apps (Accounts, Api, Users)
@@ -199,19 +205,16 @@ Data Handling	ORM queries + aggregation
 Validation	Input checks + error handling
 Code Quality	Structured, readable code
 Documentation	This README
-📎 Future Improvements
-JWT Authentication
 
-Pagination for APIs
+## 📎 Future Improvements
+- JWT Authentication
+- Pagination for APIs
+- Advanced analytics (charts, trends)
+- Docker deployment
+- PostgreSQL integration
 
-Advanced analytics (charts, trends)
-
-Docker deployment
-
-PostgreSQL integration
-
-📄 License
+## 📄 License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-👨‍💻 Author
+## 👨‍💻 Author
 Harsh Khandelwal
